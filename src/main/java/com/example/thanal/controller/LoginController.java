@@ -1,6 +1,6 @@
 package com.example.thanal.controller;
 
-import javafx.event.ActionEvent;
+import javafx.event.ActionEvent; // <-- ADD THIS LINE
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -69,7 +69,8 @@ public class LoginController {
 
     private void loadDashboard(String role, ActionEvent event) {
         try {
-            String fxmlFile = "/com/thanal/fxml/" + role + "-dashboard.fxml";
+            // Corrected path from previous step
+            String fxmlFile = "/com/example/thanal/" + role + "-dashboard.fxml";
             Parent dashboard = FXMLLoader.load(getClass().getResource(fxmlFile));
             Scene scene = new Scene(dashboard);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -1,4 +1,4 @@
-package com.thanal.controller;
+package com.example.thanal.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
