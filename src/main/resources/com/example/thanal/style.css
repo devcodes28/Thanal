@@ -1,0 +1,222 @@
+/* General Styling */
+.root {
+    -fx-background-color: #F0F4F8; /* Fallback/default background */
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Header Label Styling */
+.header-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0D47A1; /* Dark blue text */
+}
+
+/* Header Label Styling */
+.header-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0D47A1; /* Dark blue text */
+}
+
+/* --- NEW STYLES FOR BRANDING --- */
+.app-name {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0D47A1; /* Dark blue text */
+}
+
+.tagline {
+    -fx-font-size: 14px;
+    -fx-text-fill: #546E7A; /* A softer, blue-gray color */
+    -fx-padding: 0 0 15px 0; /* Add some space below the tagline */
+}
+/* --- END OF NEW STYLES --- */
+
+
+/* Button Styling */
+/* ... (the rest of your CSS file) ... */
+/* Button Styling */
+.button {
+    -fx-background-color: #1976D2; /* Primary blue */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px; /* Rounded corners */
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 0); /* Subtle shadow */
+}
+
+.button:hover {
+    -fx-background-color: #1565C0; /* Darker blue on hover */
+}
+
+/* Secondary Button (for Register) */
+.secondary-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #1976D2;
+    -fx-border-radius: 20px;
+    -fx-border-width: 2px;
+    -fx-text-fill: #1976D2;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #E3F2FD; /* Lighter blue on hover */
+    -fx-text-fill: #1565C0;
+}
+
+
+/* Input Fields Styling */
+/* ... (keep your existing styles up to the Input Fields section) ... */
+
+/* Input Fields Styling */
+.text-field, .password-field, .text-area {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: #B0BEC5;
+    -fx-border-radius: 8px;
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+}
+
+/* --- NEW STYLES for Icon TextFields --- */
+
+/* This is the HBox container that looks like a text field */
+.input-group {
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-background-radius: 8px;
+    -fx-border-color: rgba(176, 190, 197, 0.5);
+    -fx-border-radius: 8px;
+    -fx-padding: 5px 10px;
+}
+
+/* Style for the SVG icons */
+.icon {
+    -fx-fill: #546E7A; /* Blue-gray color for icons */
+}
+
+/* Make the actual text fields inside the HBox transparent */
+.input-group .text-field, .input-group .password-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0; /* Remove padding as the HBox handles it */
+}
+
+/* Add a focus effect to the entire HBox group */
+.input-group:focused-within {
+    -fx-border-color: #1976D2;
+    -fx-border-width: 2px;
+}
+
+/* --- END of NEW STYLES --- */
+
+
+.text-field:focused, .password-field:focused, .text-area:focused {
+    -fx-border-color: #1976D2;
+    -fx-border-width: 2px;
+}
+
+/* ... (the rest of your CSS file) ... */
+.text-field, .password-field, .text-area {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: #B0BEC5; /* Light gray border */
+    -fx-border-radius: 8px;
+    -fx-font-size: 14px;
+    -fx-padding: 8px; /* Added padding */
+}
+
+.text-field:focused, .password-field:focused, .text-area:focused {
+    -fx-border-color: #1976D2; /* Blue border when focused */
+    -fx-border-width: 2px;
+}
+
+/* Tab Pane Styling */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #F0F4F8; /* Match root background */
+}
+
+.tab {
+    -fx-background-color: #E3F2FD; /* Light blue for tabs */
+    -fx-padding: 8px 20px;
+    -fx-background-radius: 10px 10px 0 0;
+}
+
+.tab:selected {
+    -fx-background-color: white;
+    -fx-font-weight: bold;
+}
+
+/* ListView Styling */
+.list-view {
+    -fx-border-color: #B0BEC5;
+    -fx-border-radius: 8px;
+}
+
+.list-cell:filled:selected, .list-cell:filled:selected:hover {
+    -fx-background-color: #1976D2;
+    -fx-text-fill: white;
+}
+
+.list-cell {
+    -fx-padding: 8px;
+}
+
+/* --- NEW STYLES FOR LOGIN BACKGROUND AND GLASS EFFECT --- */
+
+/* Background for the login page */
+#loginRoot {
+    -fx-background-image: url('login_background.jpg'); /* Relative path to your image */
+    -fx-background-size: cover; /* Cover the entire area */
+    -fx-background-position: center center; /* Center the image */
+    -fx-background-repeat: no-repeat;
+}
+
+/* Glass effect panel */
+.glass-panel {
+    -fx-background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+    -fx-background-radius: 20px; /* Rounded corners */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 30, 0, 0, 0); /* Stronger shadow */
+    -fx-border-color: rgba(255, 255, 255, 0.4); /* Light border for definition */
+    -fx-border-width: 1px;
+    -fx-border-radius: 20px;
+    /* Optional: Add a blur effect if you want a more pronounced glass look */
+    /* -fx-effect: gaussian-blur(10px); */ /* Apply to the background, not the content */
+
+    /* To achieve proper blur on background, apply effect to StackPane instead,
+       but usually just the semi-transparent background is enough */
+}
+
+/* Make text fields and password fields inside the glass panel appear well */
+.glass-panel .text-field, .glass-panel .password-field {
+    -fx-background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque white */
+    -fx-border-color: rgba(176, 190, 197, 0.5); /* Lighter border for contrast */
+}
+
+.glass-panel .header-label {
+    -fx-text-fill: #0D47A1; /* Ensure header text is dark blue on transparent white */
+}
+
+/* ... (keep all your existing styles) ... */
+
+/* --- ADD THESE NEW STYLES for DASHBOARDS --- */
+
+/* The main container for content within a tab */
+.dashboard-pane {
+    -fx-background-color: transparent;
+}
+
+/* Card-like containers for grouping elements */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 2); /* Softer shadow */
+}
+
+/* Sub-header labels inside cards */
+.sub-header {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #37474F; /* Dark gray-blue text */
+    -fx-padding: 0 0 10px 0; /* Space below the sub-header */
+}

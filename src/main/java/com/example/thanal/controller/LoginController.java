@@ -1,6 +1,6 @@
 package com.example.thanal.controller;
 
-import javafx.event.ActionEvent; // <-- ADD THIS LINE
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -74,6 +74,8 @@ public class LoginController {
             Parent dashboard = FXMLLoader.load(getClass().getResource(fxmlFile));
             Scene scene = new Scene(dashboard);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setResizable(true);
+            window.centerOnScreen();
             window.setScene(scene);
             window.show();
         } catch (IOException e) {
