@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thanal.controller.DoctorDashboardController">
+    <children>
+        <Label layoutX="28.0" layoutY="24.0" text="Doctor Dashboard">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <TabPane layoutX="28.0" layoutY="70.0" prefHeight="500.0" prefWidth="745.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Community Blogs">
+                    <content>
+                        <VBox spacing="10">
+                            <Button onAction="#writeNewBlog" text="Write New Blog" />
+                            <ListView fx:id="myBlogsListView" />
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Manage Consultations">
+                    <content>
+                        <VBox spacing="10">
+                            <ListView fx:id="consultationRequestsListView" />
+                            <Button onAction="#acceptConsultation" text="Accept" />
+                            <Button onAction="#declineConsultation" text="Decline" />
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="QNA Forum">
+                    <content>
+                        <VBox spacing="10">
+                            <ListView fx:id="unansweredQuestionsListView" />
+                            <TextArea fx:id="answerArea" promptText="Your answer..." />
+                            <Button onAction="#submitAnswer" text="Submit Answer" />
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="View Medical Reports">
+                    <content>
+                        <VBox spacing="10">
+                            <ListView fx:id="approvedPatientsListView" />
+                            <Button onAction="#viewPatientReport" text="View Report" />
+                        </VBox>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
