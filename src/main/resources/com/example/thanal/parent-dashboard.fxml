@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thanal.controller.ParentDashboardController">
+    <children>
+        <Label layoutX="28.0" layoutY="24.0" text="Parent Dashboard">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <TabPane layoutX="28.0" layoutY="70.0" prefHeight="500.0" prefWidth="745.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Community Blogs">
+                    <content>
+                        <VBox spacing="10">
+                            <ListView fx:id="blogListView" prefHeight="200.0" />
+                            <TextArea fx:id="blogContentView" editable="false" wrapText="true" />
+                            <TextField fx:id="blogRatingField" promptText="Rate Blog (1-5)" />
+                            <TextField fx:id="commentField" promptText="Write a comment..." />
+                            <Button onAction="#postComment" text="Post Comment" />
+                            <Button onAction="#writeNewBlog" text="Write New Blog" />
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="QNA Forum">
+                    <content>
+                        <VBox spacing="10">
+                            <ListView fx:id="qnaListView" prefHeight="200.0"/>
+                            <TextArea fx:id="questionArea" promptText="Ask a question..." />
+                            <Button onAction="#submitQuestion" text="Submit Question"/>
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Behaviour Tracker">
+                    <content>
+                        <VBox spacing="10">
+                            <TextField fx:id="behaviourField" promptText="Log Behaviour"/>
+                            <TextField fx:id="triggersField" promptText="Log Triggers"/>
+                            <Button onAction="#logBehaviour" text="Log Entry"/>
+                            <Button onAction="#downloadReport" text="Download Report"/>
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Financial Aid">
+                    <content>
+                        <VBox spacing="10">
+                            <Label text="Apply for Government Financial Aid" />
+                            <TextField fx:id="aidAppName" promptText="Applicant Name" />
+                            <TextArea fx:id="aidAppDetails" promptText="Application Details..." />
+                            <Button onAction="#submitAidApplication" text="Submit Application" />
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Education &amp; Entertainment">
+                    <content>
+                        <VBox spacing="10">
+                            <Label text="Videos, Animations, and Games for kids."/>
+                            <Button text="Launch Flip Animation"/>
+                            <Button text="Play Memory Game"/>
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Consult Doctor">
+                    <content>
+                        <VBox spacing="10">
+                            <ListView fx:id="doctorListView" prefHeight="200.0"/>
+                            <Button onAction="#requestConsultation" text="Request Consultation"/>
+                        </VBox>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
