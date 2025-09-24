@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane styleClass="dashboard-root" stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.AdminDashboardController">
+<BorderPane prefHeight="800.0" prefWidth="1280.0" styleClass="dashboard-root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.AdminDashboardController">
     <top>
-        <HBox alignment="CENTER_LEFT" styleClass="dashboard-header">
+        <HBox styleClass="dashboard-header">
             <children>
-                <Label text="Admin Dashboard" styleClass="header-label" />
+                <Label text="Admin Dashboard" styleClass="dashboard-title" />
                 <Pane HBox.hgrow="ALWAYS" />
                 <Button onAction="#handleLogout" text="Logout" styleClass="logout-button" />
             </children>
@@ -25,18 +25,18 @@
                 <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
             </padding>
             <children>
-                <VBox styleClass="card" spacing="10.0">
+                <VBox spacing="10.0" styleClass="card">
                     <children>
-                        <Label text="User Login Requests" styleClass="sub-header" />
-                        <ListView fx:id="userRequestsListView" prefHeight="180.0" />
+                        <Label text="User Login Requests" styleClass="card-title" />
+                        <ListView fx:id="userRequestsListView" prefHeight="200.0" />
                         <Button onAction="#approveUser" text="Approve Selected User" />
                     </children>
                 </VBox>
-                <VBox styleClass="card" spacing="10.0">
+                <VBox spacing="10.0" styleClass="card">
                     <children>
-                        <Label text="Manage All Users" styleClass="sub-header" />
-                        <ListView fx:id="allUsersListView" prefHeight="180.0" />
-                        <Button onAction="#deleteUser" text="Delete Selected User" />
+                        <Label text="Manage All Users" styleClass="card-title" />
+                        <ListView fx:id="allUsersListView" prefHeight="200.0" />
+                        <Button onAction="#deleteUser" text="Delete Selected User" styleClass="logout-button" />
                     </children>
                 </VBox>
             </children>

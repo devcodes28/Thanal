@@ -1,125 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" styleClass="dashboard-pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.ParentDashboardController">
-    <children>
-        <Label layoutX="28.0" layoutY="24.0" text="Parent Dashboard" styleClass="header-label" />
-        <TabPane layoutX="28.0" layoutY="70.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="70.0">
+<BorderPane prefHeight="800.0" prefWidth="1280.0" styleClass="dashboard-root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.ParentDashboardController">
+    <top>
+        <HBox styleClass="dashboard-header">
+            <children>
+                <Label text="Parent Dashboard" styleClass="dashboard-title" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleLogout" text="Logout" styleClass="logout-button" />
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="15.0" />
+            </padding>
             <tabs>
                 <Tab text="Community Blogs">
                     <content>
-                        <AnchorPane styleClass="dashboard-pane">
+                        <VBox spacing="10" styleClass="card">
                             <children>
-                                <VBox styleClass="card" spacing="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                <Label styleClass="card-title" text="Read &amp; Write Blogs" />
+                                <ListView fx:id="blogListView" prefHeight="150.0" />
+                                <TextArea fx:id="blogContentView" editable="false" prefHeight="100.0" wrapText="true" />
+                                <TextField fx:id="commentField" promptText="Write a comment..." />
+                                <HBox alignment="CENTER_LEFT" spacing="10">
                                     <children>
-                                        <Label text="Read &amp; Write Blogs" styleClass="sub-header" />
-                                        <ListView fx:id="blogListView" prefHeight="150.0" />
-                                        <TextArea fx:id="blogContentView" editable="false" prefHeight="80.0" wrapText="true" />
-                                        <TextField fx:id="blogRatingField" promptText="Rate Blog (1-5)" />
-                                        <TextField fx:id="commentField" promptText="Write a comment..." />
-                                        <HBox alignment="CENTER" spacing="10.0">
-                                            <children>
-                                                <Button onAction="#postComment" text="Post Comment" />
-                                                <Button onAction="#writeNewBlog" text="Write New Blog" />
-                                            </children>
-                                        </HBox>
+                                        <Button onAction="#postComment" text="Post Comment" />
+                                        <Button onAction="#writeNewBlog" text="Write New Blog" />
                                     </children>
-                                </VBox>
+                                </HBox>
                             </children>
-                        </AnchorPane>
+                        </VBox>
                     </content>
                 </Tab>
-                <Tab text="QNA Forum">
+                <Tab text="Q&amp;A Forum">
                     <content>
-                        <AnchorPane styleClass="dashboard-pane">
+                        <VBox spacing="10" styleClass="card">
                             <children>
-                                <VBox styleClass="card" spacing="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-                                    <children>
-                                        <Label text="Ask the Community" styleClass="sub-header" />
-                                        <ListView fx:id="qnaListView" prefHeight="200.0" />
-                                        <TextArea fx:id="questionArea" promptText="Ask a question..." />
-                                        <Button onAction="#submitQuestion" text="Submit Question" />
-                                    </children>
-                                </VBox>
+                                <Label styleClass="card-title" text="Ask the Community" />
+                                <ListView fx:id="qnaListView" prefHeight="200.0" />
+                                <TextArea fx:id="questionArea" promptText="Ask a question..." VBox.vgrow="ALWAYS" />
+                                <Button onAction="#submitQuestion" text="Submit Question" />
                             </children>
-                        </AnchorPane>
+                        </VBox>
                     </content>
                 </Tab>
                 <Tab text="Behaviour Tracker">
                     <content>
-                        <AnchorPane styleClass="dashboard-pane">
+                        <VBox spacing="10" styleClass="card">
                             <children>
-                                <VBox styleClass="card" spacing="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                <Label styleClass="card-title" text="Log and Track Behavior" />
+                                <TextField fx:id="behaviourField" promptText="Log Behaviour (e.g., Hand-flapping)" />
+                                <TextField fx:id="triggersField" promptText="Log Triggers (e.g., Loud noise)" />
+                                <HBox spacing="10">
                                     <children>
-                                        <Label text="Log and Track Behavior" styleClass="sub-header" />
-                                        <TextField fx:id="behaviourField" promptText="Log Behaviour (e.g., Hand-flapping)" />
-                                        <TextField fx:id="triggersField" promptText="Log Triggers (e.g., Loud noise)" />
                                         <Button onAction="#logBehaviour" text="Log Entry" />
                                         <Button onAction="#downloadReport" text="Download Report" />
                                     </children>
-                                </VBox>
+                                </HBox>
                             </children>
-                        </AnchorPane>
+                        </VBox>
                     </content>
                 </Tab>
-                <Tab text="Financial Aid">
+                <Tab text="Consult a Doctor">
                     <content>
-                        <AnchorPane styleClass="dashboard-pane">
+                        <VBox spacing="10" styleClass="card">
                             <children>
-                                <VBox styleClass="card" spacing="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-                                    <children>
-                                        <Label text="Apply for Government Financial Aid" styleClass="sub-header" />
-                                        <TextField fx:id="aidAppName" promptText="Applicant Name" />
-                                        <TextArea fx:id="aidAppDetails" prefHeight="150.0" promptText="Application Details..." />
-                                        <Button onAction="#submitAidApplication" text="Submit Application" />
-                                    </children>
-                                </VBox>
+                                <Label styleClass="card-title" text="Request a Consultation" />
+                                <ListView fx:id="doctorListView" VBox.vgrow="ALWAYS" />
+                                <Button onAction="#requestConsultation" text="Request Consultation" />
                             </children>
-                        </AnchorPane>
-                    </content>
-                </Tab>
-                <Tab text="Education &amp; Entertainment">
-                    <content>
-                        <AnchorPane styleClass="dashboard-pane">
-                            <children>
-                                <VBox styleClass="card" spacing="20.0" alignment="CENTER" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-                                    <children>
-                                        <Label text="Fun &amp; Learning" styleClass="sub-header" />
-                                        <Label text="Videos, Animations, and Games for kids." />
-                                        <Button text="Launch Flip Animation" />
-                                        <Button text="Play Memory Game" />
-                                    </children>
-                                </VBox>
-                            </children>
-                        </AnchorPane>
-                    </content>
-                </Tab>
-                <Tab text="Consult Doctor">
-                    <content>
-                        <AnchorPane styleClass="dashboard-pane">
-                            <children>
-                                <VBox styleClass="card" spacing="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-                                    <children>
-                                        <Label text="Request a Consultation" styleClass="sub-header" />
-                                        <ListView fx:id="doctorListView" VBox.vgrow="ALWAYS" />
-                                        <Button onAction="#requestConsultation" text="Request Consultation" />
-                                    </children>
-                                </VBox>
-                            </children>
-                        </AnchorPane>
+                        </VBox>
                     </content>
                 </Tab>
             </tabs>
         </TabPane>
-    </children>
-</AnchorPane>
+    </center>
+</BorderPane>

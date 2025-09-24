@@ -1,87 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="dashboard-pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.DoctorDashboardController">
-    <children>
-        <Label layoutX="28.0" layoutY="24.0" text="Doctor Dashboard" styleClass="header-label" />
-        <TabPane layoutX="28.0" layoutY="70.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="70.0">
+<BorderPane prefHeight="800.0" prefWidth="1280.0" styleClass="dashboard-root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.DoctorDashboardController">
+    <top>
+        <HBox styleClass="dashboard-header">
+            <children>
+                <Label text="Doctor Dashboard" styleClass="dashboard-title" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleLogout" text="Logout" styleClass="logout-button" />
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="15.0" />
+            </padding>
             <tabs>
-                <Tab text="Community Blogs">
+                <Tab text="Manage Blogs">
                     <content>
-                        <AnchorPane styleClass="dashboard-pane">
+                        <VBox spacing="10" styleClass="card">
                             <children>
-                                <VBox styleClass="card" spacing="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-                                    <children>
-                                        <Label text="Manage Your Blogs" styleClass="sub-header" />
-                                        <ListView fx:id="myBlogsListView" VBox.vgrow="ALWAYS" />
-                                        <Button onAction="#writeNewBlog" text="Write New Blog" />
-                                    </children>
-                                </VBox>
+                                <Label styleClass="card-title" text="Your Published Articles" />
+                                <ListView fx:id="myBlogsListView" VBox.vgrow="ALWAYS" />
+                                <Button onAction="#writeNewBlog" text="Write New Blog" />
                             </children>
-                        </AnchorPane>
+                        </VBox>
                     </content>
                 </Tab>
-                <Tab text="Manage Consultations">
+                <Tab text="Consultations">
                     <content>
-                        <AnchorPane styleClass="dashboard-pane">
+                        <VBox spacing="10" styleClass="card">
                             <children>
-                                <VBox styleClass="card" spacing="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                                <Label styleClass="card-title" text="Incoming Consultation Requests" />
+                                <ListView fx:id="consultationRequestsListView" VBox.vgrow="ALWAYS" />
+                                <HBox alignment="CENTER_LEFT" spacing="10">
                                     <children>
-                                        <Label text="Consultation Requests" styleClass="sub-header" />
-                                        <ListView fx:id="consultationRequestsListView" VBox.vgrow="ALWAYS" />
-                                        <HBox alignment="CENTER" spacing="10.0">
-                                            <children>
-                                                <Button onAction="#acceptConsultation" text="Accept" />
-                                                <Button onAction="#declineConsultation" text="Decline" />
-                                            </children>
-                                        </HBox>
+                                        <Button onAction="#acceptConsultation" text="Accept" />
+                                        <Button onAction="#declineConsultation" text="Decline" styleClass="logout-button" />
                                     </children>
-                                </VBox>
+                                </HBox>
                             </children>
-                        </AnchorPane>
+                        </VBox>
                     </content>
                 </Tab>
-                <Tab text="QNA Forum">
+                <Tab text="Q&amp;A Forum">
                     <content>
-                        <AnchorPane styleClass="dashboard-pane">
+                        <VBox spacing="10" styleClass="card">
                             <children>
-                                <VBox styleClass="card" spacing="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-                                    <children>
-                                        <Label text="Answer Community Questions" styleClass="sub-header" />
-                                        <ListView fx:id="unansweredQuestionsListView" prefHeight="150.0" />
-                                        <TextArea fx:id="answerArea" promptText="Your answer..." VBox.vgrow="ALWAYS" />
-                                        <Button onAction="#submitAnswer" text="Submit Answer" />
-                                    </children>
-                                </VBox>
+                                <Label styleClass="card-title" text="Answer Community Questions" />
+                                <ListView fx:id="unansweredQuestionsListView" prefHeight="150.0" />
+                                <TextArea fx:id="answerArea" promptText="Your answer..." VBox.vgrow="ALWAYS" />
+                                <Button onAction="#submitAnswer" text="Submit Answer" />
                             </children>
-                        </AnchorPane>
+                        </VBox>
                     </content>
                 </Tab>
-                <Tab text="View Medical Reports">
+                <Tab text="Patient Reports">
                     <content>
-                        <AnchorPane styleClass="dashboard-pane">
+                        <VBox spacing="10" styleClass="card">
                             <children>
-                                <VBox styleClass="card" spacing="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-                                    <children>
-                                        <Label text="Approved Patient Reports" styleClass="sub-header" />
-                                        <ListView fx:id="approvedPatientsListView" VBox.vgrow="ALWAYS" />
-                                        <Button onAction="#viewPatientReport" text="View Report" />
-                                    </children>
-                                </VBox>
+                                <Label styleClass="card-title" text="Approved Patient Reports" />
+                                <ListView fx:id="approvedPatientsListView" VBox.vgrow="ALWAYS" />
+                                <Button onAction="#viewPatientReport" text="View Report" />
                             </children>
-                        </AnchorPane>
+                        </VBox>
                     </content>
                 </Tab>
             </tabs>
         </TabPane>
-    </children>
-</AnchorPane>
+    </center>
+</BorderPane>

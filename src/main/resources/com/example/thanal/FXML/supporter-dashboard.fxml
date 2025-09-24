@@ -1,53 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" styleClass="dashboard-pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.SupporterDashboardController">
-    <children>
-        <Label layoutX="28.0" layoutY="24.0" text="Community Supporter Dashboard" styleClass="header-label" />
-        <TabPane layoutX="28.0" layoutY="70.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="70.0">
+<BorderPane prefHeight="800.0" prefWidth="1280.0" styleClass="dashboard-root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.SupporterDashboardController">
+    <top>
+        <HBox styleClass="dashboard-header">
+            <children>
+                <Label text="Supporter Dashboard" styleClass="dashboard-title" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleLogout" text="Logout" styleClass="logout-button" />
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="15.0" />
+            </padding>
             <tabs>
                 <Tab text="Read Blogs">
                     <content>
-                        <AnchorPane styleClass="dashboard-pane">
+                        <VBox spacing="10" styleClass="card">
                             <children>
-                                <VBox styleClass="card" spacing="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-                                    <children>
-                                        <Label text="Community Blogs" styleClass="sub-header" />
-                                        <ListView fx:id="blogListView" prefHeight="150.0" />
-                                        <TextArea fx:id="blogContentView" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
-                                        <TextField fx:id="blogRatingField" promptText="Rate Blog (1-5)" />
-                                        <Button onAction="#submitRating" text="Submit Rating" />
-                                    </children>
-                                </VBox>
+                                <Label styleClass="card-title" text="Community Blogs" />
+                                <ListView fx:id="blogListView" prefHeight="150.0" />
+                                <TextArea fx:id="blogContentView" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
+                                <TextField fx:id="blogRatingField" promptText="Rate Blog (1-5)" />
+                                <Button onAction="#submitRating" text="Submit Rating" />
                             </children>
-                        </AnchorPane>
+                        </VBox>
                     </content>
                 </Tab>
-                <Tab text="Provide Recommendations">
+                <Tab text="Recommendations">
                     <content>
-                        <AnchorPane styleClass="dashboard-pane">
+                        <VBox spacing="10" styleClass="card">
                             <children>
-                                <VBox styleClass="card" spacing="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-                                    <children>
-                                        <Label text="Suggest an Improvement" styleClass="sub-header" />
-                                        <TextArea fx:id="recommendationArea" promptText="Suggest a new feature or improvement..." VBox.vgrow="ALWAYS" />
-                                        <Button onAction="#submitRecommendation" text="Submit Recommendation" />
-                                    </children>
-                                </VBox>
+                                <Label styleClass="card-title" text="Suggest an Improvement" />
+                                <TextArea fx:id="recommendationArea" promptText="Suggest a new feature or improvement..." VBox.vgrow="ALWAYS" />
+                                <Button onAction="#submitRecommendation" text="Submit Recommendation" />
                             </children>
-                        </AnchorPane>
+                        </VBox>
                     </content>
                 </Tab>
             </tabs>
         </TabPane>
-    </children>
-</AnchorPane>
+    </center>
+</BorderPane>
