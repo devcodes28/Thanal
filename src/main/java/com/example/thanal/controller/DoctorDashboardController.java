@@ -1,8 +1,12 @@
 package com.example.thanal.controller;
 
+import com.example.thanal.util.SceneSwitcher;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+
+import java.io.IOException;
 
 public class DoctorDashboardController {
 
@@ -26,4 +30,5 @@ public class DoctorDashboardController {
     @FXML void declineConsultation() { System.out.println("Declined: " + consultationRequestsListView.getSelectionModel().getSelectedItem());}
     @FXML void submitAnswer() { System.out.println("Answer submitted for: " + unansweredQuestionsListView.getSelectionModel().getSelectedItem());}
     @FXML void viewPatientReport() { System.out.println("Viewing report for: " + approvedPatientsListView.getSelectionModel().getSelectedItem());}
+    @FXML void handleLogout(ActionEvent event) throws IOException { SceneSwitcher.switchScene(event, "home-page.fxml", true); }
 }

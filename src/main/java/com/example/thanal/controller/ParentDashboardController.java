@@ -1,10 +1,14 @@
 package com.example.thanal.controller;
 
+import com.example.thanal.util.SceneSwitcher;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
 
 public class ParentDashboardController {
 
@@ -35,4 +39,5 @@ public class ParentDashboardController {
     @FXML void downloadReport() { System.out.println("Downloading behavior report..."); }
     @FXML void submitAidApplication() { System.out.println("Financial aid application submitted for " + aidAppName.getText()); }
     @FXML void requestConsultation() { System.out.println("Consultation requested with " + doctorListView.getSelectionModel().getSelectedItem()); }
+    @FXML void handleLogout(ActionEvent event) throws IOException { SceneSwitcher.switchScene(event, "home-page.fxml", true); }
 }

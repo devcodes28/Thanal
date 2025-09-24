@@ -5,41 +5,20 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.SVGPath?>
 
-<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.LoginController"
-           prefHeight="600.0" prefWidth="550.0" id="loginRoot">
-    <VBox alignment="CENTER" spacing="15" prefHeight="480.0" prefWidth="380.0" styleClass="glass-panel">
-        <padding>
-            <Insets top="20" right="30" bottom="20" left="30"/>
-        </padding>
-
-        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@logo.png" />
-            </image>
-        </ImageView>
-
-        <Label text="Thanal" styleClass="app-name" />
-        <Label text="Connect. Support. Grow." styleClass="tagline" />
-
-        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="input-group">
-            <SVGPath content="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" styleClass="icon"/>
-            <TextField fx:id="emailField" promptText="Email" HBox.hgrow="ALWAYS"/>
+<StackPane fx:id="loginRoot" prefHeight="650.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.LoginController">
+    <VBox alignment="CENTER" maxWidth="450.0" spacing="20.0" styleClass="login-panel">
+        <Label styleClass="login-title" text="Member Login" />
+        <Label styleClass="login-tagline" text="Enter your credentials to access your dashboard." />
+        <TextField fx:id="emailField" promptText="Email" />
+        <PasswordField fx:id="passwordField" promptText="Password" />
+        <Button defaultButton="true" onAction="#handleLoginButtonAction" prefWidth="250.0" text="Login" />
+        <Label fx:id="statusLabel" style="-fx-text-fill: #D32F2F;" />
+        <HBox alignment="CENTER_LEFT">
+            <Button onAction="#handleBackButtonAction" text="← Back to Home" styleClass="nav-button" />
         </HBox>
-
-        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="input-group">
-            <SVGPath content="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" styleClass="icon"/>
-            <PasswordField fx:id="passwordField" promptText="Password" HBox.hgrow="ALWAYS"/>
-        </HBox>
-
-        <Button fx:id="loginButton" onAction="#handleLoginButtonAction" text="Login" prefWidth="250.0" />
-        <Label fx:id="statusLabel" textFill="#ef2727" />
-        <Button fx:id="registerButton" onAction="#handleRegisterButtonAction" text="Register" prefWidth="250.0" styleClass="secondary-button"/>
     </VBox>
 </StackPane>

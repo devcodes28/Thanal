@@ -14,7 +14,7 @@ public class ThanalApp extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        String fxmlPath = "/com/example/thanal/login.fxml";
+        String fxmlPath = "/com/example/thanal/home-page.fxml";
         URL fxmlLocation = getClass().getResource(fxmlPath);
 
         if (fxmlLocation == null) {
@@ -23,20 +23,14 @@ public class ThanalApp extends Application {
         }
 
         Parent root = FXMLLoader.load(fxmlLocation);
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(root, 900, 650); // Set a default size
 
         // Load the CSS stylesheet
         scene.getStylesheets().add(getClass().getResource("/com/example/thanal/style.css").toExternalForm());
 
         stage.setTitle("Thanal - Autism Support");
-
-        // Set the application icon (logo)
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/com/example/thanal/logo.png")));
-
-        // --- ADD THIS LINE ---
-        // Make the initial window (login page) not resizable
-        stage.setResizable(false);
-
+        stage.setResizable(true);
         stage.setScene(scene);
         stage.show();
     }

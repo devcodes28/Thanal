@@ -1,222 +1,140 @@
-/* General Styling */
+/* --- GLOBAL STYLES --- */
 .root {
-    -fx-background-color: #F0F4F8; /* Fallback/default background */
+    -fx-background-color: #F0F4F8; /* Light blue-grey background */
     -fx-font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* Header Label Styling */
-.header-label {
+/* --- PUBLIC PAGES (Home, About, Contact) --- */
+.public-page-root {
+    -fx-background-color: white;
+}
+
+.navigation-bar {
+    -fx-background-color: white;
+    -fx-padding: 15px 40px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+.app-name-nav {
     -fx-font-size: 28px;
     -fx-font-weight: bold;
-    -fx-text-fill: #0D47A1; /* Dark blue text */
+    -fx-text-fill: #0D47A1; /* Dark Blue */
 }
 
-/* Header Label Styling */
-.header-label {
-    -fx-font-size: 28px;
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #37474F; /* Dark Grey */
     -fx-font-weight: bold;
-    -fx-text-fill: #0D47A1; /* Dark blue text */
-}
-
-/* --- NEW STYLES FOR BRANDING --- */
-.app-name {
-    -fx-font-size: 36px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #0D47A1; /* Dark blue text */
-}
-
-.tagline {
-    -fx-font-size: 14px;
-    -fx-text-fill: #546E7A; /* A softer, blue-gray color */
-    -fx-padding: 0 0 15px 0; /* Add some space below the tagline */
-}
-/* --- END OF NEW STYLES --- */
-
-
-/* Button Styling */
-/* ... (the rest of your CSS file) ... */
-/* Button Styling */
-.button {
-    -fx-background-color: #1976D2; /* Primary blue */
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-background-radius: 20px; /* Rounded corners */
-    -fx-padding: 8px 16px;
+    -fx-font-size: 15px;
     -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 0); /* Subtle shadow */
+}
+.nav-button:hover {
+    -fx-text-fill: #1976D2; /* Primary Blue */
 }
 
-.button:hover {
-    -fx-background-color: #1565C0; /* Darker blue on hover */
+.page-content-box {
+    -fx-padding: 40px;
 }
 
-/* Secondary Button (for Register) */
-.secondary-button {
-    -fx-background-color: transparent;
-    -fx-border-color: #1976D2;
-    -fx-border-radius: 20px;
-    -fx-border-width: 2px;
-    -fx-text-fill: #1976D2;
-}
-
-.secondary-button:hover {
-    -fx-background-color: #E3F2FD; /* Lighter blue on hover */
-    -fx-text-fill: #1565C0;
-}
-
-
-/* Input Fields Styling */
-/* ... (keep your existing styles up to the Input Fields section) ... */
-
-/* Input Fields Styling */
-.text-field, .password-field, .text-area {
-    -fx-background-color: white;
-    -fx-background-radius: 8px;
-    -fx-border-color: #B0BEC5;
-    -fx-border-radius: 8px;
-    -fx-font-size: 14px;
-    -fx-padding: 8px;
-}
-
-/* --- NEW STYLES for Icon TextFields --- */
-
-/* This is the HBox container that looks like a text field */
-.input-group {
-    -fx-background-color: rgba(255, 255, 255, 0.9);
-    -fx-background-radius: 8px;
-    -fx-border-color: rgba(176, 190, 197, 0.5);
-    -fx-border-radius: 8px;
-    -fx-padding: 5px 10px;
-}
-
-/* Style for the SVG icons */
-.icon {
-    -fx-fill: #546E7A; /* Blue-gray color for icons */
-}
-
-/* Make the actual text fields inside the HBox transparent */
-.input-group .text-field, .input-group .password-field {
-    -fx-background-color: transparent;
-    -fx-border-color: transparent;
-    -fx-padding: 0; /* Remove padding as the HBox handles it */
-}
-
-/* Add a focus effect to the entire HBox group */
-.input-group:focused-within {
-    -fx-border-color: #1976D2;
-    -fx-border-width: 2px;
-}
-
-/* --- END of NEW STYLES --- */
-
-
-.text-field:focused, .password-field:focused, .text-area:focused {
-    -fx-border-color: #1976D2;
-    -fx-border-width: 2px;
-}
-
-/* ... (the rest of your CSS file) ... */
-.text-field, .password-field, .text-area {
-    -fx-background-color: white;
-    -fx-background-radius: 8px;
-    -fx-border-color: #B0BEC5; /* Light gray border */
-    -fx-border-radius: 8px;
-    -fx-font-size: 14px;
-    -fx-padding: 8px; /* Added padding */
-}
-
-.text-field:focused, .password-field:focused, .text-area:focused {
-    -fx-border-color: #1976D2; /* Blue border when focused */
-    -fx-border-width: 2px;
-}
-
-/* Tab Pane Styling */
-.tab-pane .tab-header-area .tab-header-background {
-    -fx-background-color: #F0F4F8; /* Match root background */
-}
-
-.tab {
-    -fx-background-color: #E3F2FD; /* Light blue for tabs */
-    -fx-padding: 8px 20px;
-    -fx-background-radius: 10px 10px 0 0;
-}
-
-.tab:selected {
-    -fx-background-color: white;
+.page-title {
+    -fx-font-size: 40px;
     -fx-font-weight: bold;
+    -fx-text-fill: #0D47A1;
 }
 
-/* ListView Styling */
-.list-view {
-    -fx-border-color: #B0BEC5;
-    -fx-border-radius: 8px;
+.page-subtitle {
+    -fx-font-size: 18px;
+    -fx-text-fill: #546E7A; /* Softer blue-grey */
+    -fx-max-width: 600px;
+    -fx-text-alignment: center;
 }
 
-.list-cell:filled:selected, .list-cell:filled:selected:hover {
-    -fx-background-color: #1976D2;
-    -fx-text-fill: white;
-}
-
-.list-cell {
-    -fx-padding: 8px;
-}
-
-/* --- NEW STYLES FOR LOGIN BACKGROUND AND GLASS EFFECT --- */
-
-/* Background for the login page */
+/* --- LOGIN PAGE --- */
 #loginRoot {
-    -fx-background-image: url('login_background.jpg'); /* Relative path to your image */
-    -fx-background-size: cover; /* Cover the entire area */
-    -fx-background-position: center center; /* Center the image */
-    -fx-background-repeat: no-repeat;
+    -fx-background-image: url('login_background.jpg');
+    -fx-background-size: cover;
+    -fx-background-position: center;
 }
 
-/* Glass effect panel */
-.glass-panel {
-    -fx-background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
-    -fx-background-radius: 20px; /* Rounded corners */
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 30, 0, 0, 0); /* Stronger shadow */
-    -fx-border-color: rgba(255, 255, 255, 0.4); /* Light border for definition */
-    -fx-border-width: 1px;
-    -fx-border-radius: 20px;
-    /* Optional: Add a blur effect if you want a more pronounced glass look */
-    /* -fx-effect: gaussian-blur(10px); */ /* Apply to the background, not the content */
-
-    /* To achieve proper blur on background, apply effect to StackPane instead,
-       but usually just the semi-transparent background is enough */
+.login-panel {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-background-radius: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 30, 0, 0, 0);
+    -fx-padding: 30px 40px;
 }
 
-/* Make text fields and password fields inside the glass panel appear well */
-.glass-panel .text-field, .glass-panel .password-field {
-    -fx-background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque white */
-    -fx-border-color: rgba(176, 190, 197, 0.5); /* Lighter border for contrast */
+.login-title { -fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #0D47A1; }
+.login-tagline { -fx-font-size: 14px; -fx-text-fill: #546E7A; }
+
+/* --- DASHBOARD STYLES --- */
+.dashboard-root {
+    -fx-background-color: #F0F4F8;
 }
 
-.glass-panel .header-label {
-    -fx-text-fill: #0D47A1; /* Ensure header text is dark blue on transparent white */
+.dashboard-header {
+    -fx-background-color: white;
+    -fx-padding: 15px 30px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
 }
 
-/* ... (keep all your existing styles) ... */
-
-/* --- ADD THESE NEW STYLES for DASHBOARDS --- */
-
-/* The main container for content within a tab */
-.dashboard-pane {
-    -fx-background-color: transparent;
+.dashboard-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0D47A1;
 }
 
-/* Card-like containers for grouping elements */
 .card {
     -fx-background-color: white;
     -fx-background-radius: 12px;
-    -fx-padding: 20px;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 2); /* Softer shadow */
+    -fx-padding: 25px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0, 0, 2);
 }
 
-/* Sub-header labels inside cards */
 .sub-header {
-    -fx-font-size: 16px;
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
-    -fx-text-fill: #37474F; /* Dark gray-blue text */
-    -fx-padding: 0 0 10px 0; /* Space below the sub-header */
+    -fx-text-fill: #37474F;
+    -fx-padding-bottom: 10px;
 }
+
+/* --- UI CONTROLS (Buttons, TextFields, etc.) --- */
+.button {
+    -fx-background-color: #1976D2;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 25px;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+.button:hover {
+    -fx-background-color: #1565C0; /* Darker blue */
+}
+
+.logout-button {
+    -fx-background-color: #D32F2F; /* Red */
+}
+.logout-button:hover {
+    -fx-background-color: #C62828; /* Darker Red */
+}
+
+.text-field, .password-field, .text-area {
+    -fx-background-radius: 8px;
+    -fx-border-color: #B0BEC5;
+    -fx-border-radius: 8px;
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+}
+.text-field:focused, .password-field:focused, .text-area:focused {
+    -fx-border-color: #1976D2;
+    -fx-border-width: 2px;
+}
+
+.tab-pane .tab-header-area .tab-header-background { -fx-background-color: transparent; }
+.tab { -fx-background-color: #E3F2FD; -fx-padding: 10px 25px; -fx-background-radius: 10px 10px 0 0; }
+.tab:selected { -fx-background-color: white; -fx-border-color: #B0BEC5; -fx-border-width: 1 1 0 1; }
+.tab-pane > .tab-content-area { -fx-padding: 10px 0 0 0; }
+
+.list-view { -fx-border-color: #B0BEC5; -fx-border-radius: 8px; }
+.list-cell { -fx-padding: 10px; -fx-font-size: 14px; }
+.list-cell:filled:selected { -fx-background-color: #1976D2; -fx-text-fill: white; }
