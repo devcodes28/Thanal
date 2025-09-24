@@ -1,0 +1,172 @@
+/* --- GLOBAL STYLES --- */
+.root {
+    -fx-background-color: #F4F7FA;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* --- typography --- */
+.label {
+    -fx-text-fill: #333;
+}
+
+.header-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0D47A1;
+}
+
+.sub-header {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #37474F;
+    -fx-padding-bottom: 10px;
+}
+
+/* --- NAVIGATION --- */
+.navigation-bar {
+    -fx-background-color: white;
+    -fx-padding: 15px 40px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);
+}
+
+.app-name-nav {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0D47A1;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #37474F;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-cursor: hand;
+    -fx-background-radius: 20px;
+    -fx-padding: 8px 16px;
+}
+
+.nav-button:hover {
+    -fx-background-color: #E3F2FD;
+    -fx-text-fill: #1976D2;
+}
+
+.nav-button-login {
+    -fx-background-color: #1976D2;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-cursor: hand;
+    -fx-background-radius: 20px;
+    -fx-padding: 8px 16px;
+}
+
+.nav-button-login:hover {
+    -fx-background-color: #1565C0;
+}
+
+/* --- MAIN CONTENT --- */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 25px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 15, 0, 0, 2);
+}
+
+/* --- BUTTONS --- */
+.button {
+    -fx-background-color: #1976D2;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 25px;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #1565C0;
+}
+
+.logout-button {
+    -fx-background-color: #D32F2F;
+}
+
+.logout-button:hover {
+    -fx-background-color: #C62828;
+}
+
+/* --- FORMS --- */
+.text-field, .password-field, .text-area {
+    -fx-background-radius: 8px;
+    -fx-border-color: #B0BEC5;
+    -fx-border-radius: 8px;
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+}
+
+.text-field:focused, .password-field:focused, .text-area:focused {
+    -fx-border-color: #1976D2;
+    -fx-border-width: 2px;
+}
+
+/* --- TABS --- */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab {
+    -fx-background-color: #E3F2FD;
+    -fx-padding: 10px 25px;
+    -fx-background-radius: 10px 10px 0 0;
+}
+
+.tab:selected {
+    -fx-background-color: white;
+    -fx-border-color: #B0BEC5;
+    -fx-border-width: 1 1 0 1;
+}
+
+.tab-pane > .tab-content-area {
+    -fx-padding: 10px 0 0 0;
+}
+
+/* --- LIST VIEW --- */
+.list-view {
+    -fx-border-color: #B0BEC5;
+    -fx-border-radius: 8px;
+}
+
+.list-cell {
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #1976D2;
+    -fx-text-fill: white;
+}
+
+/* --- LOGIN PAGE --- */
+#loginRoot {
+    -fx-background-image: url('login_background.jpg');
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+.login-panel {
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 30, 0, 0, 0);
+    -fx-padding: 40px;
+}
+
+.login-title {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0D47A1;
+}
+
+.login-tagline {
+    -fx-font-size: 14px;
+    -fx-text-fill: #546E7A;
+}

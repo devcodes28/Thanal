@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="loginRoot" prefHeight="650.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.LoginController">
+    <VBox alignment="CENTER" maxWidth="450.0" spacing="20.0" styleClass="login-panel">
+        <Label styleClass="login-title" text="Member Login" />
+        <Label styleClass="login-tagline" text="Enter your credentials to access your dashboard." />
+        <TextField fx:id="emailField" promptText="Email" />
+        <PasswordField fx:id="passwordField" promptText="Password" />
+        <Button defaultButton="true" onAction="#handleLoginButtonAction" prefWidth="250.0" text="Login" />
+        <Label fx:id="statusLabel" style="-fx-text-fill: #D32F2F;" />
+        <HBox alignment="CENTER_LEFT">
+            <Button onAction="#handleBackButtonAction" text="← Back to Home" styleClass="nav-button" />
+        </HBox>
+    </VBox>
+</StackPane>
