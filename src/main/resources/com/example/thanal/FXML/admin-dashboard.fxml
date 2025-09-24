@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane styleClass="dashboard-root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.AdminDashboardController">
+<BorderPane styleClass="dashboard-root" stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.AdminDashboardController">
     <top>
         <HBox alignment="CENTER_LEFT" styleClass="dashboard-header">
             <children>
-                <Label text="Admin Dashboard" styleClass="dashboard-title" />
+                <Label text="Admin Dashboard" styleClass="header-label" />
                 <Pane HBox.hgrow="ALWAYS" />
                 <Button onAction="#handleLogout" text="Logout" styleClass="logout-button" />
             </children>

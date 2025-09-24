@@ -18,7 +18,6 @@ public class DoctorDashboardController {
 
     @FXML
     public void initialize() {
-        // Populate with dummy data
         myBlogsListView.getItems().add("My article on sensory integration therapy");
         consultationRequestsListView.getItems().add("Request from Parent A for Child X");
         unansweredQuestionsListView.getItems().add("Q: How to handle meltdowns?");
@@ -30,5 +29,10 @@ public class DoctorDashboardController {
     @FXML void declineConsultation() { System.out.println("Declined: " + consultationRequestsListView.getSelectionModel().getSelectedItem());}
     @FXML void submitAnswer() { System.out.println("Answer submitted for: " + unansweredQuestionsListView.getSelectionModel().getSelectedItem());}
     @FXML void viewPatientReport() { System.out.println("Viewing report for: " + approvedPatientsListView.getSelectionModel().getSelectedItem());}
-    @FXML void handleLogout(ActionEvent event) throws IOException { SceneSwitcher.switchScene(event, "home-page.fxml", true); }
+
+    @FXML
+    void handleLogout(ActionEvent event) throws IOException {
+        // CORRECTED: Removed the third boolean argument
+        SceneSwitcher.switchScene(event, "home-page.fxml");
+    }
 }

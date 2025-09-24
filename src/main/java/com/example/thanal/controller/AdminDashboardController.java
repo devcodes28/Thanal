@@ -19,5 +19,10 @@ public class AdminDashboardController {
 
     @FXML void approveUser() { System.out.println("Approved: " + userRequestsListView.getSelectionModel().getSelectedItem()); }
     @FXML void deleteUser() { System.out.println("Deleted: " + allUsersListView.getSelectionModel().getSelectedItem());}
-    @FXML void handleLogout(ActionEvent event) throws IOException { SceneSwitcher.switchScene(event, "home-page.fxml", true); }
+
+    @FXML
+    void handleLogout(ActionEvent event) throws IOException {
+        // CORRECTED: Removed the boolean argument
+        SceneSwitcher.switchScene(event, "home-page.fxml");
+    }
 }

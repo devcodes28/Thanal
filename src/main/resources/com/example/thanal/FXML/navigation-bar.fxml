@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<HBox fx:id="navigationBar" styleClass="navigation-bar" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.NavigationBarController">
+    <children>
+        <Label text="Thanal." styleClass="app-name-nav" />
+        <Pane HBox.hgrow="ALWAYS" />
+        <Button onAction="#goToHome" text="Home" styleClass="nav-button" />
+        <Button onAction="#goToAboutUs" text="About Us" styleClass="nav-button" />
+        <Button onAction="#goToContactUs" text="Contact Us" styleClass="nav-button" />
+        <Button onAction="#goToLogin" text="Login" styleClass="nav-button-login" />
+    </children>
+</HBox>

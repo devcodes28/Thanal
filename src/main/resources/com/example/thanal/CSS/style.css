@@ -1,0 +1,57 @@
+/* --- GLOBAL STYLES --- */
+.root { -fx-font-family: 'Segoe UI', Arial, sans-serif; -fx-background-color: #F8F9FA; }
+
+/* --- BACKGROUND IMAGE STYLES FOR EACH PAGE --- */
+.home-page-root { -fx-background-image: url('../images/home_image.jpeg'); -fx-background-size: cover; -fx-background-position: center; }
+.login-page-root { -fx-background-image: url('../images/login_background.jpg'); -fx-background-size: cover; -fx-background-position: center; }
+.about-us-page-root { -fx-background-image: url('../images/about_us_image.jpg'); -fx-background-size: cover; -fx-background-position: center; }
+.contact-us-page-root { -fx-background-image: url('../images/contact_us_image.jpg'); -fx-background-size: cover; -fx-background-position: center; }
+
+/* --- "GLASS" CONTENT OVERLAY --- */
+.content-overlay {
+    -fx-background-color: rgba(255, 255, 255, 0.65); /* 65% opacity for darker box */
+    -fx-background-radius: 16px;
+    -fx-border-color: rgba(255, 255, 255, 0.5);
+    -fx-border-width: 1px;
+    -fx-border-radius: 16px;
+    -fx-padding: 40px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 25, 0, 0, 0);
+}
+
+/* --- NAVIGATION BAR --- */
+.navigation-bar { -fx-background-color: white; -fx-padding: 10px 40px; -fx-alignment: center-left; -fx-spacing: 20px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 3); }
+.app-name-nav { -fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #0D47A1; }
+.nav-button { -fx-background-color: transparent; -fx-text-fill: #495057; -fx-font-weight: bold; -fx-font-size: 15px; -fx-cursor: hand; -fx-padding: 8px 12px; -fx-background-radius: 6px; }
+.nav-button:hover { -fx-text-fill: #1976D2; -fx-background-color: #F1F3F5; }
+.nav-button-login { -fx-background-color: #1976D2; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 15px; -fx-cursor: hand; -fx-padding: 8px 20px; -fx-background-radius: 6px; }
+.nav-button-login:hover { -fx-background-color: #1565C0; }
+
+/* --- TYPOGRAPHY & TEXT STYLES --- */
+.home-title { -fx-font-size: 64px; -fx-font-weight: bold; -fx-text-fill: #0D47A1; }
+.home-subtitle { -fx-font-size: 22px; -fx-text-fill: #212529; -fx-text-alignment: center; -fx-max-width: 600px; }
+.page-title { -fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #0D47A1; -fx-padding-bottom: 10px; }
+.page-section-title { -fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #1976D2; }
+.page-text { -fx-font-size: 16px; -fx-text-fill: #212529; -fx-line-spacing: 5px; }
+
+/* --- LOGIN PAGE SPECIFIC STYLES --- */
+.login-panel {
+    -fx-max-width: 500px;
+    -fx-padding: 40px;
+}
+.login-title {
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0D47A1;
+    -fx-padding-bottom: 10px;
+}
+.status-label { -fx-text-fill: #D32F2F; -fx-font-weight: bold; }
+.separator { -fx-background-color: #DEE2E6; -fx-pref-height: 1px; -fx-min-height: 1px; }
+.link-style { -fx-text-fill: #1976D2; -fx-underline: false; -fx-font-size: 13px; -fx-cursor: hand; }
+.link-style:hover { -fx-underline: true; }
+.signup-text { -fx-font-size: 14px; -fx-text-fill: #343A40; }
+
+/* --- GENERAL UI CONTROLS --- */
+.button { -fx-background-color: #1976D2; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8px; -fx-padding: 12px 20px; -fx-font-size: 15px; -fx-cursor: hand; }
+.button:hover { -fx-background-color: #1565C0; }
+.text-field, .password-field { -fx-background-radius: 8px; -fx-border-color: #CED4DA; -fx-border-radius: 8px; -fx-font-size: 14px; -fx-padding: 12px; }
+.text-field:focused, .password-field:focused { -fx-border-color: #1976D2; -fx-border-width: 1.5px; }

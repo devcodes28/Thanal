@@ -23,5 +23,10 @@ public class SupporterDashboardController {
 
     @FXML void submitRating() { System.out.println("Rating submitted: " + blogRatingField.getText()); }
     @FXML void submitRecommendation() { System.out.println("Recommendation submitted: " + recommendationArea.getText()); }
-    @FXML void handleLogout(ActionEvent event) throws IOException { SceneSwitcher.switchScene(event, "home-page.fxml", true); }
+
+    @FXML
+    void handleLogout(ActionEvent event) throws IOException {
+        // CORRECTED: Removed the third boolean argument
+        SceneSwitcher.switchScene(event, "home-page.fxml");
+    }
 }

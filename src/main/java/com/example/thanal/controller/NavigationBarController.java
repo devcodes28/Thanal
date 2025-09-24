@@ -7,18 +7,22 @@ import java.io.IOException;
 public class NavigationBarController {
 
     public void goToHome(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(event, "home-page.fxml", true);
+        // CORRECTED: Removed the boolean argument
+        SceneSwitcher.switchScene(event, "home-page.fxml");
     }
 
     public void goToAboutUs(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(event, "about-us.fxml", true);
+        // CORRECTED: Removed the boolean argument
+        SceneSwitcher.switchScene(event, "about-us.fxml");
     }
 
     public void goToContactUs(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(event, "contact-us.fxml", true);
+        // CORRECTED: Removed the boolean argument
+        SceneSwitcher.switchScene(event, "contact-us.fxml");
     }
 
     public void goToLogin(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(event, "login.fxml", false);
+        // CORRECTED: Removed the boolean argument
+        SceneSwitcher.switchScene(event, "login.fxml");
     }
 }
