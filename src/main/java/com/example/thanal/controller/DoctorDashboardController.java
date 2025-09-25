@@ -1,38 +1,128 @@
 package com.example.thanal.controller;
 
+import com.example.thanal.model.*;
 import com.example.thanal.util.SceneSwitcher;
+import com.example.thanal.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-
+import javafx.scene.control.*;
 import java.io.IOException;
 
 public class DoctorDashboardController {
 
-    @FXML private ListView<String> myBlogsListView;
-    @FXML private ListView<String> consultationRequestsListView;
-    @FXML private ListView<String> unansweredQuestionsListView;
+    // FXML fields typed with Model classes
+    @FXML private ListView<Blog> myBlogsListView;
+    @FXML private ListView<Consultation> consultationRequestsListView;
+    @FXML private ListView<QnQuestion> unansweredQuestionsListView;
+    @FXML private ListView<Parent> approvedPatientsListView; // Represents parents who approved data sharing
+
+    @FXML private Label welcomeLabel;
     @FXML private TextArea answerArea;
-    @FXML private ListView<String> approvedPatientsListView;
+
+    private Doctor currentUser;
 
     @FXML
     public void initialize() {
-        myBlogsListView.getItems().add("My article on sensory integration therapy");
-        consultationRequestsListView.getItems().add("Request from Parent A for Child X");
-        unansweredQuestionsListView.getItems().add("Q: How to handle meltdowns?");
-        approvedPatientsListView.getItems().add("Patient: Child X (Access Approved)");
+        User user = SessionManager.getInstance().getCurrentUser();
+        if (user instanceof Doctor) {
+            this.currentUser = (Doctor) user;
+            welcomeLabel.setText("Doctor Dashboard: " + currentUser.getName());
+        } else {
+            welcomeLabel.setText("Doctor Dashboard: Error");
+            return;
+        }
+
+        setupBlogs();
+        setupConsultations();
+        setupQuestions();
+        setupApprovedPatients();
     }
 
-    @FXML void writeNewBlog() { System.out.println("Opening blog editor...");}
-    @FXML void acceptConsultation() { System.out.println("Accepted: " + consultationRequestsListView.getSelectionModel().getSelectedItem());}
-    @FXML void declineConsultation() { System.out.println("Declined: " + consultationRequestsListView.getSelectionModel().getSelectedItem());}
-    @FXML void submitAnswer() { System.out.println("Answer submitted for: " + unansweredQuestionsListView.getSelectionModel().getSelectedItem());}
-    @FXML void viewPatientReport() { System.out.println("Viewing report for: " + approvedPatientsListView.getSelectionModel().getSelectedItem());}
+    private void setupBlogs() {
+        // Mock data for blogs written by this doctor
+        Blog b1 = new Blog(); b1.setTitle("My Article on Sensory Integration");
+        myBlogsListView.getItems().add(b1);
+        myBlogsListView.setCellFactory(param -> new ListCell<>() {
+            @Override
+            protected void updateItem(Blog item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty || item == null ? null : item.getTitle());
+            }
+        });
+    }
+
+    private void setupConsultations() {
+        // Mock data for consultation requests
+        Parent p1 = new Parent(); p1.setName("Emily Carter"); p1.setChildName("Leo Carter");
+        Consultation c1 = new Consultation(); c1.setParentId(p1.getUserId()); c1.setStatus("REQUESTED");
+        // In a real app, you'd link the parent object itself
+
+        consultationRequestsListView.getItems().add(c1);
+        consultationRequestsListView.setCellFactory(param -> new ListCell<>() {
+            @Override
+            protected void updateItem(Consultation item, boolean empty) {
+                super.updateItem(item, empty);
+                // In a real app, you'd fetch the Parent's name from the parentId
+                setText(empty || item == null ? null : "Request from Parent for Consultation");
+            }
+        });
+    }
+
+    private void setupQuestions() {
+        QnQuestion q1 = new QnQuestion(); q1.setTitle("How to handle meltdowns?");
+        unansweredQuestionsListView.getItems().add(q1);
+        unansweredQuestionsListView.setCellFactory(param -> new ListCell<>() {
+            @Override
+            protected void updateItem(QnQuestion item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty || item == null ? null : item.getTitle());
+            }
+        });
+    }
+
+    private void setupApprovedPatients() {
+        Parent p1 = new Parent(); p1.setName("Emily Carter"); p1.setChildName("Leo Carter");
+        approvedPatientsListView.getItems().add(p1);
+        approvedPatientsListView.setCellFactory(param -> new ListCell<>() {
+            @Override
+            protected void updateItem(Parent item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText("Patient: " + item.getChildName() + " (Parent: " + item.getName() + ")");
+                }
+            }
+        });
+    }
 
     @FXML
     void handleLogout(ActionEvent event) throws IOException {
-        // CORRECTED: Removed the third boolean argument
+        SessionManager.getInstance().clearSession();
         SceneSwitcher.switchScene(event, "home-page.fxml");
     }
+
+    // --- Action Handlers now work with Objects ---
+    @FXML void acceptConsultation() {
+        Consultation selected = consultationRequestsListView.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            selected.setStatus("ACCEPTED");
+            System.out.println("Accepted consultation request.");
+            consultationRequestsListView.refresh(); // Update the view
+        }
+    }
+
+    @FXML void submitAnswer() {
+        QnQuestion selected = unansweredQuestionsListView.getSelectionModel().getSelectedItem();
+        if (selected != null && !answerArea.getText().isEmpty()) {
+            QnAnswer answer = new QnAnswer();
+            answer.setAuthorId(currentUser.getUserId());
+            answer.setQuestionId(selected.getQuestionId());
+            answer.setContent(answerArea.getText());
+            System.out.println("Answer submitted for: " + selected.getTitle());
+            answerArea.clear();
+        }
+    }
+
+    // ... other methods ...
 }

@@ -8,7 +8,7 @@
     <top>
         <HBox styleClass="dashboard-header">
             <children>
-                <Label text="Parent Dashboard" styleClass="dashboard-title" />
+                <Label fx:id="welcomeLabel" text="Parent Dashboard" styleClass="dashboard-title" />
                 <Pane HBox.hgrow="ALWAYS" />
                 <Button onAction="#handleLogout" text="Logout" styleClass="logout-button" />
             </children>
@@ -28,12 +28,6 @@
                                 <ListView fx:id="blogListView" prefHeight="150.0" />
                                 <TextArea fx:id="blogContentView" editable="false" prefHeight="100.0" wrapText="true" />
                                 <TextField fx:id="commentField" promptText="Write a comment..." />
-                                <HBox alignment="CENTER_LEFT" spacing="10">
-                                    <children>
-                                        <Button onAction="#postComment" text="Post Comment" />
-                                        <Button onAction="#writeNewBlog" text="Write New Blog" />
-                                    </children>
-                                </HBox>
                             </children>
                         </VBox>
                     </content>
@@ -46,23 +40,6 @@
                                 <ListView fx:id="qnaListView" prefHeight="200.0" />
                                 <TextArea fx:id="questionArea" promptText="Ask a question..." VBox.vgrow="ALWAYS" />
                                 <Button onAction="#submitQuestion" text="Submit Question" />
-                            </children>
-                        </VBox>
-                    </content>
-                </Tab>
-                <Tab text="Behaviour Tracker">
-                    <content>
-                        <VBox spacing="10" styleClass="card">
-                            <children>
-                                <Label styleClass="card-title" text="Log and Track Behavior" />
-                                <TextField fx:id="behaviourField" promptText="Log Behaviour (e.g., Hand-flapping)" />
-                                <TextField fx:id="triggersField" promptText="Log Triggers (e.g., Loud noise)" />
-                                <HBox spacing="10">
-                                    <children>
-                                        <Button onAction="#logBehaviour" text="Log Entry" />
-                                        <Button onAction="#downloadReport" text="Download Report" />
-                                    </children>
-                                </HBox>
                             </children>
                         </VBox>
                     </content>
