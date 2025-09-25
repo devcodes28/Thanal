@@ -20,6 +20,55 @@
                 <Insets bottom="30.0" left="30.0" right="30.0" top="15.0" />
             </padding>
             <tabs>
+                <Tab text="Behavior Tracking">
+                    <content>
+                        <VBox spacing="10" styleClass="card">
+                            <children>
+                                <Label styleClass="card-title" text="Log Your Child's Behavior" />
+                                <TextField fx:id="behaviourField" promptText="Enter observed behavior(s)..." />
+                                <TextField fx:id="triggersField" promptText="Enter suspected trigger(s)..." />
+                                <Button onAction="#submitBehaviorLog" text="Save Log Entry" />
+                                <Separator prefHeight="20.0" />
+                                <Label styleClass="sub-header" text="Past Behavior Logs" />
+                                <ListView fx:id="behaviorLogListView" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+
+                <Tab text="Financial Aid">
+                    <content>
+                        <VBox spacing="10" styleClass="card">
+                            <children>
+                                <Label styleClass="card-title" text="Apply for Financial Assistance" />
+                                <Label text="Select the government department or scheme you are applying for." wrapText="true" />
+                                <ComboBox fx:id="govtDeptComboBox" promptText="Select Department/Scheme" maxWidth="Infinity" />
+                                <Button onAction="#submitFinancialAid" text="Submit Application" />
+                                <Separator prefHeight="20.0" />
+                                <Label styleClass="sub-header" text="Application Status" />
+                                <ListView fx:id="financialAidListView" prefHeight="150.0" />
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+
+                <Tab text="Educational Games">
+                    <content>
+                        <VBox spacing="20" styleClass="card" alignment="CENTER">
+                            <children>
+                                <Label styleClass="card-title" text="Fun &amp; Learning" />
+                                <HBox spacing="15" alignment="CENTER">
+                                    <children>
+                                        <Button text="Emotion Match Game" onAction="#playEmotionGame" />
+                                        <Button text="Story Builder Game" onAction="#playStoryGame" />
+                                        <Button text="Pattern Recognition" onAction="#playPatternGame" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+
                 <Tab text="Community Blogs">
                     <content>
                         <VBox spacing="10" styleClass="card">

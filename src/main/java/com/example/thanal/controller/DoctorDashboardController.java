@@ -53,7 +53,7 @@ public class DoctorDashboardController {
 
     private void setupConsultations() {
         // Mock data for consultation requests
-        Parent p1 = new Parent(); p1.setName("Emily Carter"); p1.setChildName("Leo Carter");
+        Parent p1 = new Parent(); p1.setName("Sumita"); p1.setChildName("Shankar");
         Consultation c1 = new Consultation(); c1.setParentId(p1.getUserId()); c1.setStatus("REQUESTED");
         // In a real app, you'd link the parent object itself
 
@@ -81,7 +81,7 @@ public class DoctorDashboardController {
     }
 
     private void setupApprovedPatients() {
-        Parent p1 = new Parent(); p1.setName("Emily Carter"); p1.setChildName("Leo Carter");
+        Parent p1 = new Parent(); p1.setName("Sumita"); p1.setChildName("Shankar");
         approvedPatientsListView.getItems().add(p1);
         approvedPatientsListView.setCellFactory(param -> new ListCell<>() {
             @Override
@@ -112,6 +112,16 @@ public class DoctorDashboardController {
         }
     }
 
+    @FXML
+    void declineConsultation() {
+        Consultation selected = consultationRequestsListView.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            consultationRequestsListView.getItems().remove(selected);
+            System.out.println("Declined consultation request.");
+        }
+    }
+
+
     @FXML void submitAnswer() {
         QnQuestion selected = unansweredQuestionsListView.getSelectionModel().getSelectedItem();
         if (selected != null && !answerArea.getText().isEmpty()) {
@@ -124,5 +134,21 @@ public class DoctorDashboardController {
         }
     }
 
-    // ... other methods ...
+    @FXML
+    void viewPatientReport() {
+        Parent selected = approvedPatientsListView.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            System.out.println("Viewing report for patient of: " + selected.getName());
+        }
+    }
+
+    /**
+     * ADDED THIS METHOD TO FIX THE ERROR.
+     * This method is called when the "Write New Blog" button is clicked.
+     */
+    @FXML
+    void writeNewBlog(ActionEvent event) {
+        // Logic to open a new window or switch to a blog editor scene would go here.
+        System.out.println("Navigating to the new blog editor...");
+    }
 }

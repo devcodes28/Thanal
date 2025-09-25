@@ -1,30 +1,24 @@
 package com.example.thanal.model;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Doctor extends User {
     private String licenseNo;
     private String specialization;
-
-    // Relationships from the diagram
     private List<MedicalReport> writtenReports;
     private List<Blog> blogs;
     private List<Consultation> managedConsultations;
 
-    // Methods from UML
+    // Methods
     public List<Object> viewAppointments() {
-        // TODO: Implement logic to fetch and return appointments
         System.out.println("Doctor " + getName() + " is viewing appointments.");
-        return null;
+        return Collections.emptyList();
     }
-
     public void acceptConsultation(Consultation request) {
-        // TODO: Implement logic to accept a consultation
         System.out.println("Doctor " + getName() + " accepted a consultation.");
     }
-
     public void requestBehaviorAccess(Consultation consult) {
-        // TODO: Implement logic to request access to behavior logs
         System.out.println("Doctor " + getName() + " is requesting access to behavior logs.");
     }
 

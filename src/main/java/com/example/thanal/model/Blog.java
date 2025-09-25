@@ -4,20 +4,15 @@ public class Blog {
     private Long blogId;
     private String title;
     private String content;
-    private Long authorId; // Doctor's userId
+    private Long authorId;
     private float rating;
-
-    // Methods from UML
+    // Methods
     public void create() {
-        // TODO: Logic to save a new blog post
         System.out.println("Creating blog: " + title);
     }
-
     public void edit() {
-        // TODO: Logic to edit an existing blog post
         System.out.println("Editing blog: " + title);
     }
-
     // Getters and Setters
     public Long getBlogId() { return blogId; }
     public void setBlogId(Long blogId) { this.blogId = blogId; }

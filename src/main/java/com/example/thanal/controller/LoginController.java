@@ -2,9 +2,10 @@ package com.example.thanal.controller;
 
 import com.example.thanal.model.*;
 import com.example.thanal.util.SceneSwitcher;
-import com.example.thanal.util.SessionManager; // <-- Import SessionManager
+import com.example.thanal.util.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -14,45 +15,72 @@ public class LoginController {
     @FXML private TextField emailField;
     @FXML private PasswordField passwordField;
     @FXML private Label statusLabel;
+    @FXML private ComboBox<String> userRoleComboBox; // Added ComboBox
+
+    /**
+     * This method is automatically called after the FXML file has been loaded.
+     * We use it to populate the ComboBox.
+     */
+    @FXML
+    public void initialize() {
+        // Add the different user roles to the dropdown
+        userRoleComboBox.getItems().addAll("Parent", "Doctor", "Supporter", "Admin");
+    }
 
     @FXML
     void handleLoginButtonAction(ActionEvent event) throws IOException {
         String email = emailField.getText();
         String password = passwordField.getText();
-        User loggedInUser = authenticate(email, password);
+        String role = userRoleComboBox.getValue(); // Get selected role
+
+        // Validity Check for all fields
+        if (role == null || role.isEmpty()) {
+            statusLabel.setText("Please select a user role.");
+            return;
+        }
+        if (email.isEmpty() || password.isEmpty()) {
+            statusLabel.setText("Email and password cannot be empty.");
+            return;
+        }
+
+        User loggedInUser = authenticate(email, password, role);
 
         if (loggedInUser != null) {
             // Store the logged-in user in the session
             SessionManager.getInstance().setCurrentUser(loggedInUser);
 
             statusLabel.setText("Login Successful!");
+            // The dashboard file name is derived from the role (e.g., "parent-dashboard.fxml")
             SceneSwitcher.switchScene(event, loggedInUser.getRole() + "-dashboard.fxml");
         } else {
-            statusLabel.setText("Invalid credentials. Please try again.");
+            statusLabel.setText("Invalid credentials for the selected role.");
         }
     }
 
-    private User authenticate(String email, String password) {
-        // This is our mock authentication. In a real app, this comes from a database.
-        if ("parent@thanal.com".equals(email) && "pass".equals(password)) {
+    /**
+     * Updated authenticate method to also check the role.
+     */
+    private User authenticate(String email, String password, String role) {
+        // This is our mock authentication.
+        if ("Parent".equals(role) && "parent@thanal.com".equals(email) && "pass".equals(password)) {
             Parent p = new Parent();
-            p.setUserId(1L); p.setName("Emily Carter"); p.setEmail(email); p.setRole("parent");
+            p.setUserId(1L); p.setName("Parent"); p.setEmail(email); p.setRole("parent");
             p.setChildName("Leo Carter");
             return p;
         }
-        if ("doctor@thanal.com".equals(email) && "pass".equals(password)) {
+        if ("Doctor".equals(role) && "doctor@thanal.com".equals(email) && "pass".equals(password)) {
             Doctor d = new Doctor();
-            d.setUserId(2L); d.setName("Dr. Aris Thorne"); d.setEmail(email); d.setRole("doctor");
+            d.setUserId(2L); d.setName("Dr Gupta"); d.setEmail(email); d.setRole("doctor");
             d.setSpecialization("Pediatric Neurology");
             return d;
         }
-        if ("supporter@thanal.com".equals(email) && "pass".equals(password)) {
+        if ("Supporter".equals(role) && "supporter@thanal.com".equals(email) && "pass".equals(password)) {
             Supporter s = new Supporter();
-            s.setUserId(3L); s.setName("Alex Chen"); s.setEmail(email); s.setRole("supporter");
+            s.setUserId(3L); s.setName("Community Supporter"); s.setEmail(email); s.setRole("supporter");
             s.setOrganization("Autism Advocates");
             return s;
         }
-        if ("admin@thanal.com".equals(email) && "pass".equals(password)) {
+        if ("Admin".equals(role) && "admin@thanal.com".equals(email) && "pass".equals(password)) {
             Admin a = new Admin();
             a.setUserId(4L); a.setName("Admin User"); a.setEmail(email); a.setRole("admin");
             return a;

@@ -5,13 +5,10 @@ public class QnQuestion {
     private Long authorId; // Corresponds to User's userId
     private String content;
     private String title; // A title field is useful, though not in UML
-
     // Method from UML
     public void post() {
-        // TODO: Implement logic to post the question
         System.out.println("Posting question: " + title);
     }
-
     // Getters and Setters
     public Long getQuestionId() { return questionId; }
     public void setQuestionId(Long questionId) { this.questionId = questionId; }

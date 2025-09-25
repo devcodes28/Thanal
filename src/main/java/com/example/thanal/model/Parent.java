@@ -1,34 +1,24 @@
 package com.example.thanal.model;
-
 import java.io.File;
 import java.time.LocalDate;
 import java.util.List;
-
 public class Parent extends User {
     private String address;
     private String childName;
     private LocalDate childDob;
-
-    // Relationships from the diagram
     private List<BehaviorLog> logs;
     private List<FinancialApplication> financialApplications;
     private List<MedicalReport> medicalReports;
-    private Consultation consultation; // 1-to-1 relationship with initiated consultation
-
-    // Methods from UML
+    private Consultation consultation;
+    // Methods
     public void uploadMedicalReport(File file) {
-        // TODO: Implement file upload logic
         System.out.println("Parent " + getName() + " is uploading a medical report.");
     }
-
     public File downloadBehaviorReport() {
-        // TODO: Implement report generation and download logic
         System.out.println("Parent " + getName() + " is downloading a behavior report.");
         return null;
     }
-
     public void approveDataSharing(Doctor doctor, String period) {
-        // TODO: Implement data sharing approval logic
         System.out.println("Parent " + getName() + " approved data sharing with Dr. " + doctor.getName());
     }
 

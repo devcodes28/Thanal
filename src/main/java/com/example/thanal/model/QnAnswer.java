@@ -5,7 +5,6 @@ public class QnAnswer {
     private Long questionId;
     private Long authorId;
     private String content;
-
     // Getters and Setters
     public Long getAnswerId() { return answerId; }
     public void setAnswerId(Long answerId) { this.answerId = answerId; }
@@ -16,3 +15,9 @@ public class QnAnswer {
     public String getContent() { return content; }
     public void setContent(String content) { this.content = content; }
 }
+
+
+
+
+
+

@@ -17,12 +17,27 @@ public class AdminDashboardController {
         allUsersListView.getItems().addAll("parent@thanal.com", "doctor@thanal.com", "supporter@thanal.com");
     }
 
-    @FXML void approveUser() { System.out.println("Approved: " + userRequestsListView.getSelectionModel().getSelectedItem()); }
-    @FXML void deleteUser() { System.out.println("Deleted: " + allUsersListView.getSelectionModel().getSelectedItem());}
+    @FXML
+    void approveUser() {
+        String selectedUser = userRequestsListView.getSelectionModel().getSelectedItem();
+        if (selectedUser != null) {
+            userRequestsListView.getItems().remove(selectedUser);
+            allUsersListView.getItems().add(selectedUser.replace("New ", ""));
+            System.out.println("Approved: " + selectedUser);
+        }
+    }
+
+    @FXML
+    void deleteUser() {
+        String selectedUser = allUsersListView.getSelectionModel().getSelectedItem();
+        if (selectedUser != null) {
+            allUsersListView.getItems().remove(selectedUser);
+            System.out.println("Deleted: " + selectedUser);
+        }
+    }
 
     @FXML
     void handleLogout(ActionEvent event) throws IOException {
-        // CORRECTED: Removed the boolean argument
         SceneSwitcher.switchScene(event, "home-page.fxml");
     }
 }

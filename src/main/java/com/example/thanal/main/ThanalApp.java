@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class ThanalApp extends Application {
-
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/thanal/FXML/home-page.fxml")));
