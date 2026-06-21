@@ -1,113 +1,76 @@
-Thanal - Autism Support Community
-Thanal is a JavaFX desktop application designed to build a supportive community for parents, doctors, and supporters of children with autism. It provides a centralized platform for resource sharing, communication, and support, leveraging Google Firestore for backend data management.
+<div align="center">
+  <h1>🌟 Thanal</h1>
+  <p><em>A Digital Platform for the Parents of Autistic Children</em></p>
 
-Features
-The application provides distinct dashboards and functionalities based on user roles:
+![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![JavaFX](https://img.shields.io/badge/JavaFX-21-4796CC?style=for-the-badge&logo=java&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-Firestore-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
+![Maven](https://img.shields.io/badge/Apache_Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
+</div>
 
-1. Parent Dashboard
-Behavior Tracking: Log daily behaviors and suspected triggers for your child.
+---
 
-Export Logs: Download the complete behavior history as a CSV file for analysis or sharing with professionals.
+## 📖 About The Project
 
-Financial Aid: View and apply for fictional government schemes and track application status.
+**Thanal** is a JavaFX desktop application designed to build a supportive, centralized community for parents, doctors, and supporters of children with autism. By leveraging Google Firestore for real-time backend data management, Thanal provides a safe space for resource sharing, behavioral tracking, and professional consultation.
 
-Educational Games: Access links to external educational games for children.
+---
 
-Community Blogs: Read, comment on, and write new blog posts to share experiences and advice.
+## ✨ Features by Role
 
-Q&A Forum: Ask questions to the community (including doctors) and answer questions from other parents.
+### 👨‍👩‍👦 For Parents
+* **Behavior Tracking:** Log daily behaviors and suspected triggers to monitor patterns.
+* **Exportable Reports:** Download complete behavior histories as CSV files for medical professionals.
+* **Financial Aid Portal:** View and apply for government schemes and track application statuses.
+* **Educational Resources:** Access curated external educational games for children.
+* **Community Engagement:** Read, comment on, and author blog posts to share experiences.
+* **Q&A Forum:** Ask questions directly to the community and verified doctors.
+* **Doctor Consultations:** Browse available specialists and send direct consultation requests.
 
-Doctor Consultation: View a list of available doctors and send consultation requests.
+### 🩺 For Doctors
+* **Blog Management:** Publish and manage informative articles for the community.
+* **Consultation Management:** Review, accept, or decline incoming consultation requests.
+* **Medical Q&A:** Provide verified answers to questions posted by parents in the forum.
+* **Patient Overview:** Access approved patient reports and histories.
 
-2. Doctor Dashboard
-Blog Management: Write, publish, and manage your own articles and blog posts.
+### 🤝 For Supporters
+* **Knowledge Sharing:** Access and read all community blog posts.
+* **Feedback System:** Rate blogs (1-5) to highlight helpful content.
+* **Platform Improvement:** Submit recommendations and feature requests directly to admins.
 
-Consultation Requests: View and manage incoming consultation requests from parents (Accept/Decline).
+### 🛡️ For Administrators
+* **Access Control:** Review, approve, or reject new user registration requests.
+* **User Management:** Oversee all approved users and maintain community safety guidelines.
 
-Q&A Forum: Answer questions posted by parents in the community forum.
+---
 
-Patient Reports: Access a list of approved patients (currently mock data).
+## 🚀 Getting Started
 
-3. Supporter Dashboard
-Read Blogs: View and read all blogs posted by the community.
+### Prerequisites
+Before running the application, ensure you have the following installed:
+* **Java JDK 17** or higher
+* **Apache Maven**
+* A **Google Firebase** Project
 
-Rate Blogs: Provide ratings (1-5) on blogs.
+### 1. Firebase Configuration
+This application requires a Google Firebase project to handle real-time database operations.
+1. Create a new project in the [Firebase Console](https://console.firebase.google.com/).
+2. Navigate to **Project Settings > Service accounts**.
+3. Click **"Generate new private key"** and download the JSON file.
+4. Rename the downloaded file to `serviceAccountKey.json`.
+5. Place this file into the project directory: `src/main/resources/com/example/thanal/`
 
-Submit Recommendations: Suggest new features or improvements for the Thanal platform.
+### 2. Local File Storage Setup
+The registration process safely saves uploaded verification documents locally.
+1. On your `C:` drive, create a new folder named exactly **`Thanal_Uploads`** (Path: `C:/Thanal_Uploads/`).
+2. Ensure your user account has write permissions for this directory.
 
-4. Admin Dashboard
-User Approval: View and approve or reject new user registration requests.
+### 3. Build and Run
+Open your terminal in the root directory (where `pom.xml` is located) and run:
 
-User Management: View a list of all approved users and delete users from the system (both pending and approved).
-
-Core Features
-Secure Registration: A detailed registration process that collects role-specific information and documents (e.g., Aadhaar, medical license).
-
-Role-Based Login: A login system that directs users to their specific dashboard.
-
-Firebase Integration: All data (users, blogs, questions, logs) is stored and retrieved in real-time from Google Firestore.
-
-Technologies Used
-Frontend: JavaFX (using FXML for UI layout)
-
-Backend: Google Firebase (Firestore)
-
-Language: Java 17
-
-Build System: Apache Maven
-
-
-Prerequisites
-Java JDK 17 or higher.
-
-Apache Maven.
-
-Google Firebase Project.
-
-1. Firebase Setup
-This application requires a Google Firebase project to function.
-
-Go to the Firebase Console.
-
-Create a new project.
-
-In your project, go to Project Settings > Service accounts.
-
-Click "Generate new private key" and save the downloaded JSON file.
-
-Rename this file to serviceAccountKey.json.
-
-Place this serviceAccountKey.json file into the project's src/main/resources/com/example/thanal/ directory.
-
-2. Local File Storage Setup
-The registration process saves uploaded documents to a local folder.
-
-On your C: drive, create a new folder named Thanal_Uploads (path: C:/Thanal_Uploads/).
-
-Ensure your user account has write permissions for this folder.
-
-3. Build and Run
-Open a terminal or command prompt in the root directory of the project (where pom.xml is located).
-
-Build the project using Maven:
-
-Bash
-
+```bash
+# Clean and build the project
 mvn clean install
-(or ./mvnw clean install on Linux/macOS, mvnw.cmd clean install on Windows)
 
-Run the application using the Maven JavaFX plugin:
-
-Bash
-
+# Run the application
 mvn javafx:run
-(or ./mvnw javafx:run / mvnw.cmd javafx:run)
-
-4. Default Admin Login
-A mock admin account is included for testing.
-
-Role: Admin
-
-Email: admin@thanal.com
-
-Password: pass
