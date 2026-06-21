@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.TextAlignment?>
+
+<BorderPane prefHeight="800.0" prefWidth="1280.0" styleClass="about-us-page-root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.AboutUsController">
+    <top>
+        <fx:include source="navigation-bar.fxml" />
+    </top>
+    <center>
+        <StackPane alignment="CENTER">
+            <VBox alignment="CENTER" spacing="15" styleClass="content-overlay">
+                <children>
+                    <Label text="Who We Are" styleClass="page-title" textAlignment="CENTER" />
+                    <Label styleClass="page-text" text="Thanal is a dedicated platform designed to create a supportive community for parents, doctors, and supporters of children with autism. We aim to provide resources, foster connections, and offer tools that empower and assist in the journey of growth and development." textAlignment="CENTER" wrapText="true" />
+                    <Label text="Our Mission" styleClass="page-section-title" textAlignment="CENTER" />
+                    <Label styleClass="page-text" text="To connect families with professionals, provide access to reliable information, and build a network of support that ensures every child with autism has the opportunity to thrive." textAlignment="CENTER" wrapText="true" />
+                    <Label text="Our Vision" styleClass="page-section-title" textAlignment="CENTER" />
+                    <Label styleClass="page-text" text="A world where every individual on the autism spectrum is understood, supported, and celebrated for their unique abilities." textAlignment="CENTER" wrapText="true" />
+                </children>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

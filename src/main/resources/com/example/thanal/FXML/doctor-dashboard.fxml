@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="800.0" prefWidth="1280.0" styleClass="dashboard-root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.DoctorDashboardController">
+    <top>
+        <HBox styleClass="dashboard-header">
+            <children>
+                <Label fx:id="welcomeLabel" text="Doctor Dashboard" styleClass="dashboard-title" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleLogout" text="Logout" styleClass="logout-button" />
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="15.0" />
+            </padding>
+            <tabs>
+                <Tab text="Manage Blogs">
+                    <content>
+                        <VBox spacing="10" styleClass="card">
+                            <children>
+                                <Label styleClass="card-title" text="Your Published Articles" />
+                                <ListView fx:id="myBlogsListView" VBox.vgrow="ALWAYS" />
+                                <Button onAction="#writeNewBlog" text="Write New Blog" />
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Consultations">
+                    <content>
+                        <VBox spacing="10" styleClass="card">
+                            <children>
+                                <Label styleClass="card-title" text="Incoming Consultation Requests" />
+                                <ListView fx:id="consultationRequestsListView" VBox.vgrow="ALWAYS" />
+                                <HBox alignment="CENTER_LEFT" spacing="10">
+                                    <children>
+                                        <Button onAction="#acceptConsultation" text="Accept" />
+                                        <Button onAction="#declineConsultation" text="Decline" styleClass="logout-button" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Q&amp;A Forum">
+                    <content>
+                        <VBox spacing="10" styleClass="card">
+                            <children>
+                                <Label styleClass="card-title" text="Answer Community Questions" />
+                                <ListView fx:id="unansweredQuestionsListView" prefHeight="150.0" />
+                                <TextArea fx:id="answerArea" promptText="Your answer..." VBox.vgrow="ALWAYS" />
+                                <Button onAction="#submitAnswer" text="Submit Answer" />
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Patient Reports">
+                    <content>
+                        <VBox spacing="10" styleClass="card">
+                            <children>
+                                <Label styleClass="card-title" text="Approved Patient Reports" />
+                                <ListView fx:id="approvedPatientsListView" VBox.vgrow="ALWAYS" />
+                                <Button onAction="#viewPatientReport" text="View Report" />
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>

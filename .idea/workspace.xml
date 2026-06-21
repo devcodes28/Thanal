@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3e844096-f95b-41c9-99f7-6727c4e9cdcd" name="Changes" comment="everything works need to add forgot password">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/ResetPasswordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/thanal/FXML/reset-password.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/AdminDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/DoctorDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/DoctorDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/ParentDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/ParentDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/SupporterDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/SupporterDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/WriteBlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/WriteBlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/main/ThanalApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/main/ThanalApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/BehaviorLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/BehaviorLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Blog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Consultation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Consultation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Parent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Parent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/QnAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/QnAnswer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/QnQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/QnQuestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Supporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Supporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/thanal/FXML/admin-dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/thanal/FXML/admin-dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/thanal/FXML/parent-dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/thanal/FXML/parent-dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/thanal/FXML/registration-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/thanal/FXML/registration-page.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <hideBySeverity>
+      <option value="300" />
+    </hideBySeverity>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="34NtwGHm4cUFVay64g7kDbzjiBW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ThanalApp.executor": "Run",
+    "Maven.thanal [clean].executor": "Run",
+    "Maven.thanal [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Sreedev Suresh/OneDrive/Desktop/Projects/ThanalFinal/Thanal",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sreedev Suresh\OneDrive\Desktop\ThanalFinal\Thanal\src\main\resources\com\example\thanal\FXML" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sreedev Suresh\OneDrive\Desktop\ThanalFinal\Thanal" />
+      <recent name="C:\Users\Sreedev Suresh\OneDrive\Desktop\ThanalFinal\Thanal\target\classes\com\example\thanal\FXML" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ThanalApp" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.thanal.main.ThanalApp" />
+      <module name="thanal" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Java\javafx-sdk-25\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.thanal.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26199.169" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e844096-f95b-41c9-99f7-6727c4e9cdcd" name="Changes" comment="" />
+      <created>1761066093861</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1761066093861</updated>
+      <workItem from="1761066095617" duration="283000" />
+      <workItem from="1761066389061" duration="3599000" />
+      <workItem from="1761070032465" duration="1468000" />
+      <workItem from="1761071522326" duration="539000" />
+      <workItem from="1761072077584" duration="4684000" />
+      <workItem from="1761077706795" duration="657000" />
+      <workItem from="1761195536915" duration="7000" />
+    </task>
+    <task id="LOCAL-00001" summary="not working">
+      <option name="closed" value="true" />
+      <created>1761070246915</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1761070246915</updated>
+    </task>
+    <task id="LOCAL-00002" summary="not working again">
+      <option name="closed" value="true" />
+      <created>1761072213837</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1761072213837</updated>
+    </task>
+    <task id="LOCAL-00003" summary="surprisingly working but small issues with database">
+      <option name="closed" value="true" />
+      <created>1761077756500</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761077756500</updated>
+    </task>
+    <task id="LOCAL-00004" summary="surprisingly working but small issues with database">
+      <option name="closed" value="true" />
+      <created>1761195610747</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761195610747</updated>
+    </task>
+    <task id="LOCAL-00005" summary="working but database issue">
+      <option name="closed" value="true" />
+      <created>1761220492191</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1761220492191</updated>
+    </task>
+    <task id="LOCAL-00006" summary="everything works need to add forgot password">
+      <option name="closed" value="true" />
+      <created>1761229467043</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1761229467043</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="not working" />
+    <MESSAGE value="not working again" />
+    <MESSAGE value="surprisingly working but small issues with database" />
+    <MESSAGE value="working but database issue" />
+    <MESSAGE value="everything works need to add forgot password" />
+    <option name="LAST_COMMIT_MESSAGE" value="everything works need to add forgot password" />
+  </component>
+</project>

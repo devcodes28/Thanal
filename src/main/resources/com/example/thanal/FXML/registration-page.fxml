@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?> <?import javafx.scene.control.DatePicker?> <?import javafx.scene.layout.HBox?> <?import javafx.scene.layout.StackPane?> <?import javafx.scene.control.ScrollPane?> <StackPane prefHeight="800.0" prefWidth="1280.0" styleClass="login-page-root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.RegistrationController">
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+        <StackPane.margin>
+            <Insets bottom="20.0" top="20.0" />
+        </StackPane.margin>
+        <VBox alignment="CENTER" prefWidth="600.0" spacing="15.0" styleClass="content-overlay login-panel">
+            <padding>
+                <Insets bottom="30.0" left="40.0" right="40.0" top="30.0" />
+            </padding>
+            <children>
+                <Label styleClass="login-title" text="Create Your Account" /> <Label fx:id="statusLabel" alignment="CENTER" maxWidth="Infinity" styleClass="status-label" wrapText="true" />
+
+                <VBox spacing="5.0">
+                    <Label text="Role" styleClass="page-text"/>
+                    <ComboBox fx:id="userRoleComboBox" maxWidth="Infinity" promptText="Select Your Role..." />
+                </VBox>
+
+                <VBox spacing="5.0">
+                    <Label text="Full Name" styleClass="page-text"/>
+                    <TextField fx:id="nameField" maxWidth="Infinity" promptText="Enter your full name" />
+                </VBox>
+
+                <VBox spacing="5.0">
+                    <Label text="Email" styleClass="page-text"/>
+                    <TextField fx:id="emailField" maxWidth="Infinity" promptText="Enter your email" />
+                </VBox>
+
+                <VBox spacing="5.0">
+                    <Label text="Phone Number" styleClass="page-text"/>
+                    <TextField fx:id="phoneField" maxWidth="Infinity" promptText="Enter your 10-digit phone number" />
+                </VBox>
+
+                <VBox spacing="5.0">
+                    <Label text="Password" styleClass="page-text"/>
+                    <PasswordField fx:id="passwordField1" maxWidth="Infinity" promptText="Create a password (min 6 chars)" /> </VBox>
+
+                <VBox spacing="5.0">
+                    <Label text="Confirm Password" styleClass="page-text"/>
+                    <PasswordField fx:id="passwordField2" maxWidth="Infinity" promptText="Confirm your password" /> </VBox>
+
+                <VBox spacing="5.0">
+                    <Label text="Verification ID (Aadhaar)" styleClass="page-text" />
+                    <HBox alignment="CENTER_LEFT" spacing="10.0">
+                        <Button onAction="#handleAadhaarUpload" text="Upload File..." />
+                        <Label fx:id="aadhaarLabel" styleClass="page-text" text="No file selected." />
+                    </HBox>
+                </VBox>
+
+
+                <VBox fx:id="parentFields" managed="false" spacing="10.0" visible="false">
+                    <children>
+                        <Label text="Child's Full Name" styleClass="page-text" />
+                        <TextField fx:id="childNameField" promptText="Enter your child's name" />
+                        <Label text="Child's Date of Birth" styleClass="page-text" />
+                        <DatePicker fx:id="childDobPicker" maxWidth="Infinity" />
+
+                        <Label text="Medical Reports (Optional PDF)" styleClass="page-text" />
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <Button onAction="#handleMedicalReportUpload" text="Upload File..." />
+                            <Label fx:id="medicalReportLabel" styleClass="page-text" text="No file selected." />
+                        </HBox>
+
+                        <Label text="Disability Reports (Optional PDF)" styleClass="page-text" />
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <Button onAction="#handleDisabilityReportUpload" text="Upload File..." />
+                            <Label fx:id="disabilityReportLabel" styleClass="page-text" text="No file selected." />
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox fx:id="doctorFields" managed="false" spacing="10.0" visible="false">
+                    <children>
+                        <Label text="Specialization" styleClass="page-text" />
+                        <TextField fx:id="specializationField" promptText="e.g., Pediatric Neurologist" />
+
+                        <Label text="License Number" styleClass="page-text" />
+                        <TextField fx:id="licenseNoField" promptText="Enter your medical license number" />
+
+                        <Label text="Doctor License" styleClass="page-text" />
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <Button onAction="#handleLicenseUpload" text="Upload File..." />
+                            <Label fx:id="licenseLabel" styleClass="page-text" text="No file selected." />
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox fx:id="supporterFields" managed="false" spacing="10.0" visible="false">
+                    <children>
+                        <Label text="Organization Name (Optional)" styleClass="page-text" />
+                        <TextField fx:id="organizationField" promptText="Enter organization name" />
+                    </children>
+                </VBox>
+
+                <Button onAction="#handleRegister" defaultButton="true" maxWidth="Infinity" text="Register" />
+
+                <Button onAction="#handleBackButtonAction" maxWidth="Infinity" styleClass="nav-button" text="← Back to Login" />
+
+            </children>
+        </VBox>
+    </ScrollPane>
+</StackPane>

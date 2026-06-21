@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="800.0" prefWidth="1280.0" styleClass="dashboard-root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thanal.controller.SupporterDashboardController">
+    <top>
+        <HBox styleClass="dashboard-header">
+            <children>
+                <Label text="Supporter Dashboard" styleClass="dashboard-title" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleLogout" text="Logout" styleClass="logout-button" />
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="15.0" />
+            </padding>
+            <tabs>
+                <Tab text="Read Blogs">
+                    <content>
+                        <VBox spacing="10" styleClass="card">
+                            <children>
+                                <Label styleClass="card-title" text="Community Blogs" />
+                                <ListView fx:id="blogListView" prefHeight="150.0" />
+                                <TextArea fx:id="blogContentView" editable="false" wrapText="true" VBox.vgrow="ALWAYS" />
+                                <TextField fx:id="blogRatingField" promptText="Rate Blog (1-5)" />
+                                <Button onAction="#submitRating" text="Submit Rating" />
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Recommendations">
+                    <content>
+                        <VBox spacing="10" styleClass="card">
+                            <children>
+                                <Label styleClass="card-title" text="Suggest an Improvement" />
+                                <TextArea fx:id="recommendationArea" promptText="Suggest a new feature or improvement..." VBox.vgrow="ALWAYS" />
+                                <Button onAction="#submitRecommendation" text="Submit Recommendation" />
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>
