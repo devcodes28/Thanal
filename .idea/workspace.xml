@@ -4,31 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e844096-f95b-41c9-99f7-6727c4e9cdcd" name="Changes" comment="everything works need to add forgot password">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/ResetPasswordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/thanal/FXML/reset-password.fxml" afterDir="false" />
+    <list default="true" id="3e844096-f95b-41c9-99f7-6727c4e9cdcd" name="Changes" comment="Complete Thanal application: Final working code with full UI and Firebase integration.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/AdminDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/DoctorDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/DoctorDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/ParentDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/ParentDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/SupporterDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/SupporterDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/WriteBlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/controller/WriteBlogController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/main/ThanalApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/main/ThanalApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/BehaviorLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/BehaviorLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Blog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Consultation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Consultation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Parent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Parent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/QnAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/QnAnswer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/QnQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/QnQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Supporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/Supporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/thanal/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/thanal/FXML/admin-dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/thanal/FXML/admin-dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/thanal/FXML/parent-dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/thanal/FXML/parent-dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/thanal/FXML/registration-page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/thanal/FXML/registration-page.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,29 +44,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ThanalApp.executor": "Run",
-    "Maven.thanal [clean].executor": "Run",
-    "Maven.thanal [install].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Sreedev Suresh/OneDrive/Desktop/Projects/ThanalFinal/Thanal",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ThanalApp.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.thanal [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.thanal [install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sreedev Suresh/OneDrive/Desktop/Projects/ThanalFinal/Thanal&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Sreedev Suresh\OneDrive\Desktop\ThanalFinal\Thanal\src\main\resources\com\example\thanal\FXML" />
@@ -185,15 +162,33 @@
       <option name="project" value="LOCAL" />
       <updated>1761229467043</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Complete Thanal application: Final working code with full UI and Firebase integration.">
+      <option name="closed" value="true" />
+      <created>1782054079409</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1782054079409</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="361f8ea3-a2a2-48b6-8481-0ed56006217a" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="361f8ea3-a2a2-48b6-8481-0ed56006217a">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -208,6 +203,7 @@
     <MESSAGE value="surprisingly working but small issues with database" />
     <MESSAGE value="working but database issue" />
     <MESSAGE value="everything works need to add forgot password" />
-    <option name="LAST_COMMIT_MESSAGE" value="everything works need to add forgot password" />
+    <MESSAGE value="Complete Thanal application: Final working code with full UI and Firebase integration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete Thanal application: Final working code with full UI and Firebase integration." />
   </component>
 </project>
